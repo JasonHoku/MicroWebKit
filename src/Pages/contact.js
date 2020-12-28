@@ -15,12 +15,16 @@ function Home() {
           justifyContent: "center",
           textAlign: "center",
           position: "relative",
-          maxWidth: window.innerWidth,
-          minWidth: window.innerWidth,
+          left: window.innerWidth * 0.05,
         }}
       >
-        OmniWeb Landing Page: <br />
-        <small> {String(window.location.href)}</small>
+        MicroWebKit Contact Page: <br />
+        <small
+          style={{
+            left: window.innerWidth * 0.1,
+            position: "relative",
+          }}
+        > {String(window.location.href)}</small>
         <br />
         <br />
       </span>

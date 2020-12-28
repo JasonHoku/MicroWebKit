@@ -22,7 +22,7 @@ class AppHeader extends React.Component {
                 alt="logo"
                 style={{ height: "30px" }}
               />
-              OmniWeb
+              MicroWebKit
             </span>
           </span>
         </div>

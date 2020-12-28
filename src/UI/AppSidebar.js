@@ -18,11 +18,12 @@ export default class AppSidebar extends React.Component {
     };
   }
   openSidebar() {
-    document.getElementById("sideIcons").style.opacity = 1;
-    document.getElementById("sideIcons2").style.opacity = 1;
-    document.getElementById("sideIcons3").style.opacity = 1;
-    document.getElementById("sideIcons4").style.opacity = 1;
-    document.getElementById("sideIcons5").style.opacity = 1;
+    document.getElementById("sideIcons").hidden = false;
+    document.getElementById("sideIcons2").hidden = false;
+    document.getElementById("sideIcons3").hidden = false;
+    document.getElementById("sideIcons4").hidden = false;
+    document.getElementById("sideIcons5").hidden = false;
+    document.getElementById("sideBarHeader").hidden = false;
     document.getElementById("sideBarHeader").hidden = false;
 
     document.getElementById("SliderCloseIcon").hidden = false;
@@ -30,7 +31,7 @@ export default class AppSidebar extends React.Component {
     document.getElementById("SliderOpenIcon").hidden = true;
 
     let sideBarVar = document.getElementById("appSidebar");
-    if (sideBarVar.className.indexOf("appSidebar inactive")) {
+    if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
       sideBarVar.className = "appSidebar active";
     } else {
       sideBarVar.className = "appSidebar active";
@@ -38,40 +39,42 @@ export default class AppSidebar extends React.Component {
   }
 
   closeSidebar() {
-    document.getElementById("sideIcons").style.opacity = 0;
-    document.getElementById("sideIcons2").style.opacity = 0;
-    document.getElementById("sideIcons3").style.opacity = 0;
-    document.getElementById("sideIcons4").style.opacity = 0;
-    document.getElementById("sideIcons5").style.opacity = 0;
+    document.getElementById("sideIcons").hidden = true;
+    document.getElementById("sideIcons2").hidden = true;
+    document.getElementById("sideIcons3").hidden = true;
+    document.getElementById("sideIcons4").hidden = true;
+    document.getElementById("sideIcons5").hidden = true;
     document.getElementById("sideBarHeader").hidden = "true";
     document.getElementById("navButton").style.transform = "scale(1.0,1.0)";
 
-    document.getElementById("appSidebar").className = "appSidebar inactive";
+    document.getElementById("appSidebar").className =
+      "appSidebar inactiveSidebar";
 
     document.getElementById("SliderCloseIcon").hidden = true;
     document.getElementById("SliderOpenIcon").hidden = false;
   }
   toggleSidebar() {
     if (this.state.sideBarVar === 1) {
-      document.getElementById("sideIcons").style.opacity = 0;
-      document.getElementById("sideIcons2").style.opacity = 0;
-      document.getElementById("sideIcons3").style.opacity = 0;
-      document.getElementById("sideIcons4").style.opacity = 0;
-      document.getElementById("sideIcons5").style.opacity = 0;
+      document.getElementById("sideIcons").hidden = true;
+      document.getElementById("sideIcons2").hidden = true;
+      document.getElementById("sideIcons3").hidden = true;
+      document.getElementById("sideIcons4").hidden = true;
+      document.getElementById("sideIcons5").hidden = true;
       document.getElementById("sideBarHeader").hidden = "true";
       document.getElementById("navButton").style.transform = "scale(1.0,1.0)";
 
-      document.getElementById("appSidebar").className = "appSidebar inactive";
+      document.getElementById("appSidebar").className =
+        "appSidebar inactiveSidebar";
 
       document.getElementById("SliderCloseIcon").hidden = true;
       document.getElementById("SliderOpenIcon").hidden = false;
       this.setState({ sideBarVar: 2 });
     } else {
-      document.getElementById("sideIcons").style.opacity = 1;
-      document.getElementById("sideIcons2").style.opacity = 1;
-      document.getElementById("sideIcons3").style.opacity = 1;
-      document.getElementById("sideIcons4").style.opacity = 1;
-      document.getElementById("sideIcons5").style.opacity = 1;
+      document.getElementById("sideIcons").hidden = false;
+      document.getElementById("sideIcons2").hidden = false;
+      document.getElementById("sideIcons3").hidden = false;
+      document.getElementById("sideIcons4").hidden = false;
+      document.getElementById("sideIcons5").hidden = false;
       document.getElementById("sideBarHeader").hidden = false;
 
       document.getElementById("SliderCloseIcon").hidden = false;
@@ -79,7 +82,7 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderOpenIcon").hidden = true;
       this.setState({ sideBarVar: 1 });
       let sideBarVar = document.getElementById("appSidebar");
-      if (sideBarVar.className.indexOf("appSidebar inactive")) {
+      if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
         sideBarVar.className = "appSidebar active";
       } else {
         sideBarVar.className = "appSidebar active";
@@ -90,15 +93,20 @@ export default class AppSidebar extends React.Component {
   render() {
     return (
       <Fragment>
+        {
+          // Slider Code Section
+        }
+
         <span
+          style={{ left: "9px", top: "2px", position: "absolute" }}
           onMouseDown={() => this.toggleSidebar()}
           className="appSidebarSlider"
         >
           <span id="SliderOpenIcon" onMouseDown={() => this.toggleSidebar()}>
             <FaArrowsAltV
-              style={{ left: "0px", top: "0px", position: "absolute" }}
+              style={{ left: "2px", top: "5px", position: "absolute" }}
               id="navButton"
-              size="auto"
+              size="85%"
               color="lightblue"
               onClick={() => this.toggleSidebar()}
               onMouseDown={() => this.toggleSidebar()}
@@ -123,9 +131,12 @@ export default class AppSidebar extends React.Component {
             />
           </span>
         </span>
-        <span
+        <div
+          style={{
+            position: "absolute",
+            userSelect: "none",
+          }}
           id="sideBarHeader"
-          style={{ left: "45px", userSelect: "none" }}
           className="sideBarHeader"
           hidden="true"
           onClick={() => this.toggleSidebar()}
@@ -133,133 +144,234 @@ export default class AppSidebar extends React.Component {
           onMouseDown={() => this.openSidebar()}
           onMouseLeave={() => this.closeSidebar()}
         >
+          {
+            // Sidebar Header Section
+          }
           <br />
           <img
             src={logo}
             className="App-logo"
             alt="logo"
-            style={{ height: "30px" }}
+            style={{
+              width: "75px",
+              left: "95px",
+              top: "5px",
+              position: "absolute",
+            }}
           />
-          <b>OmniWeb</b>
-        </span>
+          <b
+            style={{
+              position: "absolute",
+              height: "auto",
+              left: "65px",
+              top: "65px",
+              userSelect: "none",
+            }}
+          >
+            MicroWebKit
+          </b>
+        </div>
+
+        {
+          //Sidebar Background Section
+        }
         <div
+          style={{
+            top: "0px",
+            zIndex: "98",
+            position: "absolute",
+            userSelect: "none",
+          }}
           onClick={() => this.openSidebar()}
           onMouseOver={() => this.openSidebar()}
           onMouseDown={() => this.openSidebar()}
           onMouseLeave={() => this.closeSidebar()}
           id="appSidebar"
-          className="appSidebar inactive"
+          className="appSidebar inactiveSidebar"
         >
-          <div className="appSidebarItems">
-            <div className="horSep">
+          <div
+            className="appSidebarItems"
+            style={{
+              top: "45px",
+              zIndex: 102,
+              position: "relative",
+              userSelect: "none",
+            }}
+          >
+            {
+              //Sidebar List Section
+            }
+            <div></div>
+            <div
+              style={{
+                position: "relative",
+                top: "50px",
+                paddingBottom: "10px",
+                paddingTop: "10px",
+              }}
+              className="horSep"
+            >
                
-              <div>
-                <a
-                  onMouseOver={() =>
-                    (document.getElementById("sideIcons").style.opacity = 1)
-                  }
-                  onMouseLeave={() =>
-                    (document.getElementById("sideIcons").style.opacity = 0)
-                  }
-                  href="/home"
+              <a
+                onMouseOver={() =>
+                  (document.getElementById("sideIcons").hidden = false)
+                }
+                onMouseLeave={() =>
+                  (document.getElementById("sideIcons").hidden = true)
+                }
+                href="/home"
+              >
+                <span
+                  id="sideIcons"
+                  hidden={true}
+                  style={{ position: "absolute", left: "75px" }}
+                  className="sideIcons zoom"
                 >
-                  <span
-                    id="sideIcons"
-                    style={{ opacity: 0, position: "absolute", left: "25px" }}
-                    className="sideIcons zoom"
-                  >
-                    <button> Home </button>
-                  </span>
-                  <FaHome className="zoom" />
-                </a>
-              </div>
+                  <button> Home </button>
+                </span>
+                <FaHome
+                  width="20px"
+                  style={{ position: "relative", left: "7px" }}
+                  className="zoom"
+                />
+              </a>
             </div>
 
-            <div className="horSep">
-              <div>
-                <a
-                  onMouseOver={() =>
-                    (document.getElementById("sideIcons2").style.opacity = 1)
-                  }
-                  onMouseLeave={() =>
-                    (document.getElementById("sideIcons2").style.opacity = 0)
-                  }
-                  href="/about"
+            <div
+              style={{
+                position: "relative",
+                top: "50px",
+                paddingBottom: "10px",
+                paddingTop: "10px",
+              }}
+              className="horSep"
+            >
+              <a
+                onMouseOver={() =>
+                  (document.getElementById("sideIcons2").hidden = false)
+                }
+                onMouseLeave={() =>
+                  (document.getElementById("sideIcons2").hidden = true)
+                }
+                href="/about"
+              >
+                <span
+                  id="sideIcons2"
+                  hidden={true}
+                  style={{ position: "absolute", left: "75px" }}
+                  className="sideIcons2 zoom"
                 >
-                  <span
-                    id="sideIcons2"
-                    style={{ opacity: 0, position: "absolute", left: "25px" }}
-                    className="sideIcons2 zoom"
-                  >
-                    <button> About </button>
-                  </span>
-                  <FaQuestion className="zoom" />
-                </a>
-              </div>
+                  <button> About </button>
+                </span>
+                <FaQuestion
+                  width="20px"
+                  style={{ position: "relative", left: "11px" }}
+                  className="zoom"
+                />
+              </a>
             </div>
-            <div className="horSep">
+            <div
+              style={{
+                position: "relative",
+                top: "50px",
+                paddingBottom: "10px",
+                paddingTop: "10px",
+              }}
+              className="horSep"
+            >
               <div>
                 <a
                   onMouseOver={() =>
-                    (document.getElementById("sideIcons3").style.opacity = 1)
+                    (document.getElementById("sideIcons3").hidden = false)
                   }
                   onMouseLeave={() =>
-                    (document.getElementById("sideIcons3").style.opacity = 0)
+                    (document.getElementById("sideIcons3").hidden = true)
                   }
                   href="/shop"
                 >
                   <span
                     id="sideIcons3"
-                    style={{ opacity: 0, position: "absolute", left: "25px" }}
+                    hidden={true}
+                    style={{ position: "absolute", left: "75px" }}
                     className="sideIcons3 zoom"
                   >
                     <button> Shop </button>
                   </span>
-                  <GiShop className="zoom" />
+                  <GiShop
+                    width="20px"
+                    style={{ position: "relative", left: "11px" }}
+                    className="zoom"
+                  />
                 </a>
               </div>
             </div>
-            <div className="horSep">
+            <div
+              style={{
+                position: "relative",
+                top: "50px",
+                paddingBottom: "10px",
+                paddingTop: "10px",
+              }}
+              className="horSep"
+            >
               <div>
                 <a
                   onMouseOver={() =>
-                    (document.getElementById("sideIcons4").style.opacity = 1)
+                    (document.getElementById("sideIcons4").hidden = false)
                   }
                   onMouseLeave={() =>
-                    (document.getElementById("sideIcons4").style.opacity = 0)
+                    (document.getElementById("sideIcons4").hidden = true)
                   }
                   href="/login"
                 >
                   <span
                     id="sideIcons4"
-                    style={{ opacity: 0, position: "absolute", left: "25px" }}
+                    hidden={true}
+                    style={{ position: "absolute", left: "75px" }}
                     className="sideIcons4 zoom"
                   >
                     <button> Login </button>
                   </span>
-                  <FaTools className="zoom" />
+                  <FaTools
+                    width="20px"
+                    style={{ position: "relative", left: "11px" }}
+                    className="zoom"
+                  />
                 </a>
               </div>
             </div>
-            <div className="horSep">
+            <div
+              style={{
+                position: "relative",
+                top: "50px",
+                paddingBottom: "10px",
+                paddingTop: "10px",
+              }}
+              className="horSep"
+            >
               <div>
                 <a
                   onMouseOver={() =>
-                    (document.getElementById("sideIcons5").style.opacity = 1)
+                    (document.getElementById("sideIcons5").hidden = false)
                   }
                   onMouseLeave={() =>
-                    (document.getElementById("sideIcons5").style.opacity = 0)
+                    (document.getElementById("sideIcons5").hidden = true)
                   }
                   href="/contact"
                 >
                   <span
                     id="sideIcons5"
-                    style={{ opacity: 0, position: "absolute", left: "25px" }}
+                    hidden={true}
+                    style={{ position: "absolute", left: "75px" }}
                     className="sideIcons5 zoom"
                   >
                     <button> Contact </button>
                   </span>
-                  <FaEnvelopeOpenText className="zoom" />
+                  <FaEnvelopeOpenText
+                    width="20px"
+                    style={{ position: "relative", left: "11px" }}
+                    className="zoom"
+                  />
                 </a>
               </div>
             </div>

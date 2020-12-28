@@ -3,8 +3,6 @@ import AppHeader from "./AppHeader.js";
 import AppSidebar from "./AppSidebar.js";
 import { Route, Redirect, BrowserRouter } from "react-router-dom";
 
-import App from "../App.js";
-
 import Home from "../Pages/home";
 import About from "../Pages/about";
 import Shop from "../Pages/shop";
