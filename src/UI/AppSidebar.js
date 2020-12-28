@@ -3,7 +3,7 @@ import {
   FaHome,
   FaQuestion,
   FaTools,
-  FaArrowsAltV,
+  FaGripLines,
   FaEnvelopeOpenText,
   FaWindowClose,
 } from "react-icons/fa";
@@ -103,8 +103,17 @@ export default class AppSidebar extends React.Component {
           className="appSidebarSlider"
         >
           <span id="SliderOpenIcon" onMouseDown={() => this.toggleSidebar()}>
-            <FaArrowsAltV
-              style={{ left: "2px", top: "5px", position: "absolute" }}
+            <FaGripLines
+              style={{ left: "2px", top: "10px", position: "absolute" }}
+              id="navButton"
+              size="85%"
+              color="lightblue"
+              onClick={() => this.toggleSidebar()}
+              onMouseDown={() => this.toggleSidebar()}
+              alt="More"
+            />{" "}
+            <FaGripLines
+              style={{ left: "2px", top: "22px", position: "absolute" }}
               id="navButton"
               size="85%"
               color="lightblue"
