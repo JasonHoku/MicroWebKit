@@ -1,0 +1,220 @@
+.app-main {
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.app-content {
+  align-items: center;
+  justify-content: center;
+  top: 45px;
+  position: relative;
+  padding-left: 45px;
+  padding-right: 10px;
+  font-size: calc(10px + 2vmin);
+  color: rgb(5, 0, 17);
+}
+
+body {
+  background: linear-gradient(rgba(156, 202, 255, 0.911), #15056b) no-repeat
+    fixed;
+}
+.App {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.zoom :hover {
+  text-size-adjust: 105%;
+  transform: scale(1.05);
+}
+.homeMain {
+  width: 100%;
+  height: 100%;
+}
+
+.MainAnimation-appear {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.MainAnimation-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s linear;
+}
+
+a {
+  color: rgb(100, 115, 195);
+}
+
+.appHeader {
+  position: absolute;
+  z-index: 98;
+  box-shadow: 0px 0px 0px 5px rgba(19, 10, 104, 0.8);
+  width: 100%;
+  background: linear-gradient(rgba(156, 202, 255, 0.911), #15056b) no-repeat
+    fixed;
+  align-content: center;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.headerFont {
+  font-size: 46px;
+  color: cornflowerblue;
+  font-family: Copperplate Gothic Light;
+  font-weight: lighter;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+button {
+  background-color: #5e9cff;
+  border-radius: 15%;
+  border-color: #072557;
+  color: #00173d;
+}
+.UI {
+  position: absolute;
+  height: 100%;
+  z-index: 100;
+  width: 100%;
+}
+.active {
+  width: 250px;
+  transition: all 1s;
+}
+.inactive {
+  width: 35px;
+  transition: all 1s;
+}
+
+.appSidebar {
+  position: absolute;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  height: 100%;
+  box-shadow: 0px 0px 10px 2px rgba(19, 10, 104, 0.8);
+  background: linear-gradient(
+    0.25turn,
+    #0040a7,
+    #5e9cff,
+    #b5deff,
+    #b5deff,
+    #e0f1ff,
+    #e0f1ff,
+    #e0f1ff,
+    #b5deff,
+    #b5deff,
+    #5e9cff,
+    #0040a7
+  );
+}
+.appSidebar:open {
+  position: absolute;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  height: 100%;
+  box-shadow: 0px 0px 0px 5px rgba(19, 10, 104, 0.8);
+  width: 100px;
+}
+.appSidebarSlider {
+  z-index: 100;
+  position: absolute;
+  top: 2px;
+  background: rgba(20, 2, 68, 0.863);
+  left: 2px;
+  height: 60px;
+  width: 30px;
+}
+.sideBarHeader {
+  z-index: 101;
+  position: absolute;
+}
+.appSidebarSlider:closed {
+  z-index: 100;
+  position: absolute;
+  top: 10px;
+  background: rgba(20, 2, 68, 0.863);
+  left: 10px;
+  height: 50px;
+  width: 50px;
+}
+.appSidebarSlider:open {
+  z-index: 100;
+  position: absolute;
+  top: 10px;
+  background: rgba(20, 2, 68, 0.863);
+  left: 10px;
+  height: 75px;
+  width: 75px;
+}
+.appSidebarItems {
+  z-index: 101;
+  position: absolute;
+  top: 5px;
+  font-size: large;
+  color: cornflowerblue;
+  font-weight: bolder;
+  font-family: Copperplate Gothic Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  width: 100%;
+  text-align: center;
+  line-height: 3;
+  align-content: center;
+  height: 100vh - 125px;
+}
+
+.appSidebarItems:open {
+  z-index: 101;
+  position: absolute;
+  top: 75px;
+  font-size: large;
+  color: cornflowerblue;
+  font-weight: bolder;
+  font-family: Copperplate Gothic Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  width: 100%;
+  text-align: center;
+  line-height: 3;
+  align-content: center;
+  height: 100vh - 125px;
+}
+
+.horSep {
+  width: 85%;
+  left: 2px;
+  position: relative;
+  align-items: center;
+  box-shadow: 0px 2px 0px;
+}
