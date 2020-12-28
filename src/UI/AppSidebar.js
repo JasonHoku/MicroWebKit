@@ -15,44 +15,50 @@ export default class AppSidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sideBarVar: "1",
+      sideBarVar: 1,
     };
   }
   openSidebar() {
-    document.getElementById("sideIcons").hidden = false;
-    document.getElementById("sideIcons2").hidden = false;
-    document.getElementById("sideIcons3").hidden = false;
-    document.getElementById("sideIcons4").hidden = false;
-    document.getElementById("sideIcons5").hidden = false;
-    document.getElementById("sideBarHeader").hidden = false;
-    document.getElementById("sideBarHeader").hidden = false;
+    if (this.state.sideBarVar === 1) {
+      document.getElementById("sideIcons").hidden = false;
+      document.getElementById("sideIcons2").hidden = false;
+      document.getElementById("sideIcons3").hidden = false;
+      document.getElementById("sideIcons4").hidden = false;
+      document.getElementById("sideIcons5").hidden = false;
+      document.getElementById("sideBarHeader").hidden = false;
+      document.getElementById("sideBarHeader").hidden = false;
 
-    document.getElementById("SliderCloseIcon").hidden = false;
-    document.getElementById("SliderOpenIcon").style.zIndex = 0;
-    document.getElementById("SliderOpenIcon").hidden = true;
+      document.getElementById("SliderCloseIcon").hidden = false;
+      document.getElementById("SliderOpenIcon").style.zIndex = 0;
+      document.getElementById("SliderOpenIcon").hidden = true;
 
-    let sideBarVar = document.getElementById("appSidebar");
-    if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
-      sideBarVar.className = "appSidebar active";
-    } else {
-      sideBarVar.className = "appSidebar active";
+      let sideBarVar = document.getElementById("appSidebar");
+      if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
+        sideBarVar.className = "appSidebar active";
+      } else {
+        sideBarVar.className = "appSidebar active";
+      }
     }
+    this.setState({ sideBarVar: 2 });
   }
 
   closeSidebar() {
-    document.getElementById("sideIcons").hidden = true;
-    document.getElementById("sideIcons2").hidden = true;
-    document.getElementById("sideIcons3").hidden = true;
-    document.getElementById("sideIcons4").hidden = true;
-    document.getElementById("sideIcons5").hidden = true;
-    document.getElementById("sideBarHeader").hidden = "true";
-    document.getElementById("navButton").style.transform = "scale(1.0,1.0)";
+    if (this.state.sideBarVar === 2) {
+      document.getElementById("sideIcons").hidden = true;
+      document.getElementById("sideIcons2").hidden = true;
+      document.getElementById("sideIcons3").hidden = true;
+      document.getElementById("sideIcons4").hidden = true;
+      document.getElementById("sideIcons5").hidden = true;
+      document.getElementById("sideBarHeader").hidden = "true";
+      document.getElementById("navButton").style.transform = "scale(1.0,1.0)";
 
-    document.getElementById("appSidebar").className =
-      "appSidebar inactiveSidebar";
+      document.getElementById("appSidebar").className =
+        "appSidebar inactiveSidebar";
 
-    document.getElementById("SliderCloseIcon").hidden = true;
-    document.getElementById("SliderOpenIcon").hidden = false;
+      document.getElementById("SliderCloseIcon").hidden = true;
+      document.getElementById("SliderOpenIcon").hidden = false;
+    }
+    this.setState({ sideBarVar: 1 });
   }
   toggleSidebar() {
     if (this.state.sideBarVar === 1) {
@@ -110,6 +116,7 @@ export default class AppSidebar extends React.Component {
               size="85%"
               color="lightblue"
               onClick={() => this.toggleSidebar()}
+              onMouseOver={() => this.openSidebar()}
               onMouseDown={() => this.toggleSidebar()}
               alt="More"
             />{" "}
@@ -119,6 +126,7 @@ export default class AppSidebar extends React.Component {
               size="85%"
               color="lightblue"
               onClick={() => this.toggleSidebar()}
+              onMouseOver={() => this.openSidebar()}
               onMouseDown={() => this.toggleSidebar()}
               alt="More"
             />
@@ -136,6 +144,7 @@ export default class AppSidebar extends React.Component {
               size="auto"
               color="lightblue"
               onClick={() => this.toggleSidebar()}
+              onMouseOver={() => this.openSidebar()}
               onMouseDown={() => this.toggleSidebar()}
               alt="More"
             />
@@ -152,7 +161,6 @@ export default class AppSidebar extends React.Component {
           onClick={() => this.toggleSidebar()}
           onMouseOver={() => this.openSidebar()}
           onMouseDown={() => this.openSidebar()}
-          onMouseLeave={() => this.closeSidebar()}
         >
           {
             // Sidebar Header Section
@@ -222,15 +230,7 @@ export default class AppSidebar extends React.Component {
               className="horSep"
             >
                
-              <a
-                onMouseOver={() =>
-                  (document.getElementById("sideIcons").hidden = false)
-                }
-                onMouseLeave={() =>
-                  (document.getElementById("sideIcons").hidden = true)
-                }
-                href="/home"
-              >
+              <a href="/home">
                 <span
                   id="sideIcons"
                   hidden={true}
@@ -256,15 +256,7 @@ export default class AppSidebar extends React.Component {
               }}
               className="horSep"
             >
-              <a
-                onMouseOver={() =>
-                  (document.getElementById("sideIcons2").hidden = false)
-                }
-                onMouseLeave={() =>
-                  (document.getElementById("sideIcons2").hidden = true)
-                }
-                href="/about"
-              >
+              <a href="/about">
                 <span
                   id="sideIcons2"
                   hidden={true}
@@ -290,15 +282,7 @@ export default class AppSidebar extends React.Component {
               className="horSep"
             >
               <div>
-                <a
-                  onMouseOver={() =>
-                    (document.getElementById("sideIcons3").hidden = false)
-                  }
-                  onMouseLeave={() =>
-                    (document.getElementById("sideIcons3").hidden = true)
-                  }
-                  href="/shop"
-                >
+                <a href="/shop">
                   <span
                     id="sideIcons3"
                     hidden={true}
@@ -325,15 +309,7 @@ export default class AppSidebar extends React.Component {
               className="horSep"
             >
               <div>
-                <a
-                  onMouseOver={() =>
-                    (document.getElementById("sideIcons4").hidden = false)
-                  }
-                  onMouseLeave={() =>
-                    (document.getElementById("sideIcons4").hidden = true)
-                  }
-                  href="/login"
-                >
+                <a href="/login">
                   <span
                     id="sideIcons4"
                     hidden={true}
@@ -360,15 +336,7 @@ export default class AppSidebar extends React.Component {
               className="horSep"
             >
               <div>
-                <a
-                  onMouseOver={() =>
-                    (document.getElementById("sideIcons5").hidden = false)
-                  }
-                  onMouseLeave={() =>
-                    (document.getElementById("sideIcons5").hidden = true)
-                  }
-                  href="/contact"
-                >
+                <a href="/contact">
                   <span
                     id="sideIcons5"
                     hidden={true}

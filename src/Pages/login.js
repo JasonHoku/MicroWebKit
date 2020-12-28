@@ -18,13 +18,15 @@ function Home() {
           left: window.innerWidth * 0.05,
         }}
       >
-        MicroWebKit Landing Page: <br />
+        MicroWebKit Login: <br />
         <small
           style={{
             left: window.innerWidth * 0.1,
             position: "relative",
           }}
-        > {String(window.location.href)}</small>
+        >
+          {String(window.location.href)}
+        </small>
         <br />
         <br />
       </span>

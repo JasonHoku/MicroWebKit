@@ -18,7 +18,7 @@ function Home() {
           position: "relative",
         }}
       >
-        MicroWebKit Landing Page: <br />
+        MicroWebKit Home: <br />
         <small
           style={{
             left: window.innerWidth * 0.1,
