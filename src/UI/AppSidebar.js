@@ -4,6 +4,7 @@ import {
   FaQuestion,
   FaTools,
   FaGripLines,
+  FaSuperpowers,
   FaEnvelopeOpenText,
   FaWindowClose,
 } from "react-icons/fa";
@@ -157,12 +158,12 @@ export default class AppSidebar extends React.Component {
             // Sidebar Header Section
           }
           <br />
-          <img
-            src={logo}
+          <FaSuperpowers
+            size="35px"
             className="App-logo"
             alt="logo"
             style={{
-              width: "75px",
+              height: "75px",
               left: "95px",
               top: "5px",
               position: "absolute",

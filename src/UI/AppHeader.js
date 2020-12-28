@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import logo from "../logo.svg";
 
+import {FaSuperpowers} from "react-icons/fa"
+
 class AppHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +18,8 @@ class AppHeader extends React.Component {
         <div>
           <span className="appHeader" style={{ height: "35px" }}>
             <span className="headerFont">
-              <img
-                src={logo}
+             <FaSuperpowers
+                color="black"
                 className="App-logo"
                 alt="logo"
                 style={{ height: "30px" }}
