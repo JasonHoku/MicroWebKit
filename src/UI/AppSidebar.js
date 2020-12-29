@@ -13,12 +13,14 @@ import { GiShop } from "react-icons/gi";
 export default class AppSidebar extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleSidebar = this.toggleSidebar.bind(this);
     this.state = {
       sideBarVar: 1,
     };
   }
   openSidebar() {
     if (this.state.sideBarVar === 1) {
+      console.log("3");
       document.getElementById("sideIcons").hidden = false;
       document.getElementById("sideIcons2").hidden = false;
       document.getElementById("sideIcons3").hidden = false;
@@ -42,6 +44,7 @@ export default class AppSidebar extends React.Component {
   }
 
   closeSidebar() {
+    console.log("2");
     if (this.state.sideBarVar === 1) {
       document.getElementById("sideIcons").hidden = true;
       document.getElementById("sideIcons2").hidden = true;
@@ -60,6 +63,7 @@ export default class AppSidebar extends React.Component {
     this.setState({ sideBarVar: 2 });
   }
   toggleSidebar() {
+    console.log("1");
     if (this.state.sideBarVar === 2) {
       document.getElementById("sideIcons").hidden = true;
       document.getElementById("sideIcons2").hidden = true;
@@ -75,27 +79,39 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderCloseIcon").hidden = true;
       document.getElementById("SliderOpenIcon").hidden = false;
       this.setState({ sideBarVar: 1 });
-    } else {
+    }
+    if (this.state.sideBarVar === 1) {
       document.getElementById("sideIcons").hidden = false;
       document.getElementById("sideIcons2").hidden = false;
       document.getElementById("sideIcons3").hidden = false;
       document.getElementById("sideIcons4").hidden = false;
       document.getElementById("sideIcons5").hidden = false;
       document.getElementById("sideBarHeader").hidden = false;
+      document.getElementById("sideBarHeader").hidden = false;
 
       document.getElementById("SliderCloseIcon").hidden = false;
       document.getElementById("SliderOpenIcon").style.zIndex = 0;
       document.getElementById("SliderOpenIcon").hidden = true;
-      this.setState({ sideBarVar: 2 });
+
       let sideBarVar = document.getElementById("appSidebar");
       if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
         sideBarVar.className = "appSidebar active";
       } else {
         sideBarVar.className = "appSidebar active";
       }
+      this.setState({ sideBarVar: 2 });
     }
   }
 
+  componentDidMount() {
+    let elementsArray = document.querySelectorAll("appSidebarSlider");
+
+    elementsArray.forEach(function (elem) {
+      elem.addEventListener("input", function () {
+        console.log("6");
+      });
+    });
+  }
   render() {
     return (
       <Fragment>
@@ -105,25 +121,19 @@ export default class AppSidebar extends React.Component {
 
         <span
           style={{ left: "9px", top: "2px", position: "fixed" }}
-          onMouseDown={() => this.toggleSidebar()}
-          onMouseOver={() => this.openSidebar()}
-          onClick={() => this.toggleSidebar()}
           className="appSidebarSlider"
+          class="appSidebarSlider"
         >
           <span
             id="SliderOpenIcon"
-            onMouseOver={() => this.openSidebar()}
-            onClick={() => this.toggleSidebar()}
             onMouseDown={() => this.toggleSidebar()}
+            style={{ zIndex: 105 }}
           >
             <FaGripLines
               style={{ left: "2px", top: "10px", position: "absolute" }}
               id="navButton"
               size="85%"
               color="lightblue"
-              onClick={() => this.toggleSidebar()}
-              onMouseOver={() => this.openSidebar()}
-              onMouseDown={() => this.toggleSidebar()}
               alt="More"
             />{" "}
             <FaGripLines
@@ -131,13 +141,15 @@ export default class AppSidebar extends React.Component {
               id="navButton"
               size="85%"
               color="lightblue"
-              onClick={() => this.toggleSidebar()}
-              onMouseOver={() => this.openSidebar()}
-              onMouseDown={() => this.toggleSidebar()}
               alt="More"
             />
           </span>
-          <span id="SliderCloseIcon" hidden="true">
+          <span
+            id="SliderCloseIcon"
+            onMouseDown={() => this.toggleSidebar()}
+            style={{ zIndex: 106 }}
+            hidden="true"
+          >
             <FaWindowClose
               style={{
                 left: "0px",
@@ -149,9 +161,6 @@ export default class AppSidebar extends React.Component {
               id="SliderCloseIcon2"
               size="auto"
               color="lightblue"
-              onClick={() => this.toggleSidebar()}
-              onMouseOver={() => this.openSidebar()}
-              onMouseDown={() => this.toggleSidebar()}
               alt="More"
             />
           </span>
@@ -164,9 +173,8 @@ export default class AppSidebar extends React.Component {
           id="sideBarHeader"
           className="sideBarHeader"
           hidden="true"
-          onClick={() => this.toggleSidebar()}
           onMouseOver={() => this.openSidebar()}
-          onMouseDown={() => this.openSidebar()}
+          onMouseDown={() => this.toggleSidebar()}
         >
           {
             // Sidebar Header Section
@@ -206,9 +214,7 @@ export default class AppSidebar extends React.Component {
             position: "fixed",
             userSelect: "none",
           }}
-          onClick={() => this.openSidebar()}
           onMouseOver={() => this.openSidebar()}
-          onMouseDown={() => this.openSidebar()}
           onMouseLeave={() => this.closeSidebar()}
           id="appSidebar"
           className="appSidebar inactiveSidebar"
