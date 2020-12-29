@@ -1,5 +1,5 @@
 import { CSSTransitionGroup } from "react-transition-group";
-import { FaReact } from "react-icons/fa";
+import { FaReact, Fa500Px } from "react-icons/fa";
 import { Fragment } from "react";
 function Home() {
   return (
@@ -8,11 +8,11 @@ function Home() {
         style={{
           justifyContent: "center",
           textAlign: "center",
-          left: window.innerWidth * 0.05,
+          left: window.innerWidth * 0.01,
           position: "relative",
         }}
       >
-        MicroWebKit Home: <br />
+        <b>MicroWebKit</b> &gt; <b>Home:</b> <br />
         <small
           style={{
             left: window.innerWidth * 0.1,
@@ -135,38 +135,26 @@ function Home() {
                       And so much more
                     </a>
                     .
-                  </li> <br />
+                  </li>
+                  <br />
                 </div>
               </div>
             </span>
             <br />
             <span
               style={{
-                border: "5px",
-                borderRadius: "25px",
                 width: "min-content",
-                backgroundColor: "whitesmoke",
+                textAlign: "center",
               }}
             >
               <div
                 style={{
-                  border: "5px",
-                  borderRadius: "25px",
-                  width: "auto",
-                  backgroundColor: "whitesmoke",
-                  textAlign: "center",
-                  borderSpacing: "15px",
+                  marginLeft: "15px",
+                  marginRight: "15px",
                 }}
               >
-                <div
-                  style={{
-                    marginLeft: "15px",
-                    marginRight: "15px",
-                  }}
-                >
-                  For now: <video></video>
-                  <br />
-                </div>
+                <Fa500Px className="App-logo" size="50px" />
+                <br />
                 <div
                   style={{
                     textAlign: "center",

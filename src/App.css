@@ -18,8 +18,8 @@
   position: relative;
   padding-left: 65px;
   padding-right: 35px;
+  padding-top: 5px;
   font-size: calc(10px + 2vmin);
-  color: rgb(5, 0, 17);
 }
 
 span {
@@ -31,6 +31,8 @@ body {
   position: relative;
   background: linear-gradient(rgba(156, 202, 255, 0.911), #15056b) no-repeat
     fixed;
+  color: rgb(5, 0, 17);
+  background: linear-gradient(0.75turn, #b5deff, #5e9cff, #0040a7);
 }
 .App {
   position: absolute;
@@ -65,10 +67,10 @@ a {
 .appHeader {
   position: absolute;
   z-index: 98;
-  box-shadow: 0px 0px 0px 5px rgba(19, 10, 104, 0.8);
+  box-shadow: 0px 0px 5px 3px rgba(19, 10, 104, 0.8);
   width: 100%;
-  background: linear-gradient(rgba(156, 202, 255, 0.911), #15056b) no-repeat
-    fixed;
+  color: rgb(5, 0, 17);
+  background: linear-gradient(#0040a7, #b5deff, #5e9cff);
   align-content: center;
   top: 0;
   left: 0;
@@ -82,8 +84,8 @@ a {
   color: white;
 }
 .headerFont {
-  font-size: 46px;
-  color: cornflowerblue;
+  font-size: calc(25px + 2vmin);
+  color: rgb(3, 23, 61);
   font-family: Copperplate Gothic Light;
   font-weight: lighter;
   flex-direction: column;
