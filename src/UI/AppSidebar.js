@@ -9,7 +9,6 @@ import {
   FaWindowClose,
 } from "react-icons/fa";
 import { GiShop } from "react-icons/gi";
-import logo from "../logo.svg";
 
 export default class AppSidebar extends React.Component {
   constructor(props) {
@@ -105,8 +104,10 @@ export default class AppSidebar extends React.Component {
         }
 
         <span
-          style={{ left: "9px", top: "2px", position: "absolute" }}
+          style={{ left: "9px", top: "2px", position: "fixed" }}
           onMouseDown={() => this.toggleSidebar()}
+          onMouseOver={() => this.openSidebar()}
+          onClick={() => this.toggleSidebar()}
           className="appSidebarSlider"
         >
           <span id="SliderOpenIcon" onMouseDown={() => this.toggleSidebar()}>
@@ -197,7 +198,7 @@ export default class AppSidebar extends React.Component {
           style={{
             top: "0px",
             zIndex: "98",
-            position: "absolute",
+            position: "fixed",
             userSelect: "none",
           }}
           onClick={() => this.openSidebar()}
