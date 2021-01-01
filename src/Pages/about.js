@@ -1,67 +1,117 @@
 import { CSSTransitionGroup } from "react-transition-group";
+import {
+  FaReact,
+  FaInfoCircle,
+  FaKey,
+  FaRegEnvelopeOpen,
+} from "react-icons/fa";
+import { Fragment } from "react";
 function Home() {
   return (
-    <CSSTransitionGroup
-      component="div"
-      transitionName="MainAnimation"
-      transitionAppear={true}
-      transitionAppearTimeout={2000}
-      transitionEnter={true}
-      transitionEnterTimeout={2000}
-      transitionLeave={false}
-    >
+    <Fragment>
       <span
         style={{
           justifyContent: "center",
           textAlign: "center",
+          left: window.innerWidth * 0.01,
           position: "relative",
-          left: window.innerWidth * 0.05,
         }}
       >
-        MicroWebKit About Page: <br />
-        <small
-          style={{
-            left: window.innerWidth * 0.1,
-            position: "relative",
-          }}
-        >
-          {String(window.location.href)}
-        </small>
+        <b>MicroWebKit.com</b> &gt;{" "}
+        <b>
+          <small
+            style={{
+              fontSize: "14px",
+              top: "-1px",
+              position: "relative",
+            }}
+          >
+            {String(window.location.href)}
+          </small>
+        </b>
         <br />
         <br />
       </span>
-      <span
-        style={{
-          justifyContent: "center",
-          textAlign: "center",
-          display: "content",
-          position: "relative",
-          maxWidth: window.innerWidth,
-        }}
+      <CSSTransitionGroup
+        component="span"
+        transitionName="MainAnimation"
+        transitionAppear={true}
+        transitionAppearTimeout={2000}
+        transitionEnter={true}
+        transitionEnterTimeout={2000}
+        transitionLeave={false}
       >
-        <div
-          style={{
-            border: "5px",
-            borderRadius: "25px",
-            backgroundColor: "whitesmoke",
-          }}
+        <CSSTransitionGroup
+          component="div"
+          transitionName="MainAnimation"
+          transitionAppear={true}
+          transitionAppearTimeout={2000}
+          transitionEnter={true}
+          transitionEnterTimeout={2000}
+          transitionLeave={false}
         >
           <span
             style={{
               border: "5px",
               borderRadius: "25px",
-              width: "min-content",
-              backgroundColor: "whitesmoke",
             }}
           >
-            <small>12/28</small> <br />
-            Manipulating and sharing data through custom design web interfaces.
+            <div
+              className="midBlurb"
+              style={{
+                border: "5px",
+                borderRadius: "25px",
+                width: "80%",
+                left: window.outerWidth * 0.08,
+                position: "relative",
+                textAlign: "center",
+                borderSpacing: "15px",
+              }}
+            >
+              <div style={{}}>
+                <div className="horSepPage">Welcome to MicroWebKit</div>
+                <br />
+                This website is{" "}
+                <a href="https://github.com/JasonHoku/MicroWebKit">
+                  Open-Source
+                </a>
+                ! A cross-platform utility showcase by{" "}
+                <a href="https://microhawaii.com/">MicroHawaii.com</a>
+                <br />
+                <br />
+                This app is under development. 1/1/21
+              </div>
+            </div>
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
+            <br /> <br />
           </span>
+        </CSSTransitionGroup>
+      </CSSTransitionGroup>
+      <div
+        className="HomeFooter "
+        style={{ position: "absolute", bottom: "0" }}
+      >
+        <div
+          style={{
+            textAlign: "center",
+            paddingLeft: "50px",
+          }}
+        >
+          MicroWebKit® 2020 <br />
+          <br />
+          <a href="MicroHawaii.com">MicroHawaii.com</a> +{" "}
+          <a href="PrettyCoolPattern.com"> PrettyCoolPattern</a>
         </div>
-        &nbsp;
-        <br />
-      </span>
-    </CSSTransitionGroup>
+      </div>
+    </Fragment>
   );
 }
 

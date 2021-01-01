@@ -22,7 +22,7 @@ function Home() {
           <small
             style={{
               fontSize: "14px",
-              top: "-4px",
+              top: "-1px",
               position: "relative",
             }}
           >
