@@ -23,20 +23,7 @@
 
 # The Ultimate Freelance & Indie, Web Dev AIO Utility.
 
-## Documentation
-
-You can find the React documentation [on the website](https://reactjs.org/docs).
-
-Check out the [Getting Started](https://reactjs.org/docs/getting-started.html) page for a quick overview.
-
-The documentation is divided into several sections:
-
-- [Tutorial](https://reactjs.org/tutorial/tutorial.html)
-- [Main Concepts](https://reactjs.org/docs/hello-world.html)
-- [Advanced Guides](https://reactjs.org/docs/jsx-in-depth.html)
-- [API Reference](https://reactjs.org/docs/react-api.html)
-- [Where to Get Support](https://reactjs.org/community/support.html)
-- [Contributing Guide](https://reactjs.org/docs/how-to-contribute.html)
+# WIP
 
 # Setup
 
@@ -52,51 +39,19 @@ git: https://git-scm.com/downloads
 
 Type into git bash in the desired setup directory (git install prequisite):
 
-git clone https://github.com/JasonHoku/MicroHawaii
-
-Now you have the source code and may edit and run it as a React app.
-
-## B) After making changes, upload changes to the group git repo by running the following git commands:
-
-\*note, change "your message about changes here" to a description of the update
-
-git add .
-git commit -m "your message about changes here"
-git push
+git clone https://github.com/JasonHoku/MicroWebKit
 
 ## The Private Personal Passwords File
 
-This section is for integrating your own: PayPal, EmailJS, UA & Backend.
+This section is for integrating your own: PayPal, EmailJS, Analytics, Video.
 
 Find example.env in your project root directory and rename it to .env
 This file is set to be auto excluded in sharing and will be your passwords and keys file.
 
-## Available Scripts
+# To run this full stack app:
 
-In the project directory, you can run:
+`npm run go`
 
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+# WIP
 
 ## Accepting PRs, questions, comments and concerns.
