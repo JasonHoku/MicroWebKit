@@ -16,8 +16,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "init:init": "npm i",
+    "init:initapi": "cd api && npm i",
+    "init:build": "cd api && npm run build",
+    "init:start": "npm run go",
     "dev:client": "npm start",
     "dev:server": "cd api && npm run develop",
+    "init": "npm-run-all --sequential --print-label init:*",
     "go": "npm-run-all --parallel --print-label dev:*",
     "start": "react-scripts start",
     "build": "react-scripts build",

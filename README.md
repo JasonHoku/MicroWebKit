@@ -35,11 +35,18 @@ git: https://git-scm.com/downloads
 
 ## Download Source Files For Web App & Set Up Project Workspace.
 
-## A) Get files with git:
+## A) First Time Setup
 
 Type into git bash in the desired setup directory (git install prequisite):
 
 git clone https://github.com/JasonHoku/MicroWebKit
+
+cd MicroWebKit
+
+npm run init
+
+The site will launch to localhost:3000 after about a minute.
+Launch with `npm run go` forever after
 
 ## The Private Personal Passwords File
 
