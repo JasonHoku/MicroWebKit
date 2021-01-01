@@ -34,6 +34,9 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderOpenIcon").hidden = true;
 
       let sideBarVar = document.getElementById("appSidebar");
+      document.getElementById("sidebarBlurb").hidden = false;
+      document.getElementById("sidebarBlurb2").hidden = false;
+
       if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
         sideBarVar.className = "appSidebar active";
       } else {
@@ -59,6 +62,8 @@ export default class AppSidebar extends React.Component {
 
       document.getElementById("SliderCloseIcon").hidden = true;
       document.getElementById("SliderOpenIcon").hidden = false;
+      document.getElementById("sidebarBlurb").hidden = true;
+      document.getElementById("sidebarBlurb2").hidden = true;
     }
     this.setState({ sideBarVar: 2 });
   }
@@ -78,6 +83,8 @@ export default class AppSidebar extends React.Component {
 
       document.getElementById("SliderCloseIcon").hidden = true;
       document.getElementById("SliderOpenIcon").hidden = false;
+      document.getElementById("sidebarBlurb").hidden = true;
+      document.getElementById("sidebarBlurb2").hidden = true;
       this.setState({ sideBarVar: 1 });
     }
     if (this.state.sideBarVar === 1) {
@@ -92,6 +99,8 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderCloseIcon").hidden = false;
       document.getElementById("SliderOpenIcon").style.zIndex = 0;
       document.getElementById("SliderOpenIcon").hidden = true;
+      document.getElementById("sidebarBlurb").hidden = false;
+      document.getElementById("sidebarBlurb2").hidden = false;
 
       let sideBarVar = document.getElementById("appSidebar");
       if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
@@ -168,6 +177,7 @@ export default class AppSidebar extends React.Component {
         <div
           style={{
             position: "absolute",
+            top: "-15px",
             userSelect: "none",
           }}
           id="sideBarHeader"
@@ -215,7 +225,7 @@ export default class AppSidebar extends React.Component {
             userSelect: "none",
           }}
           onMouseOver={() => this.openSidebar()}
-          onMouseLeave={() => this.closeSidebar()}
+          onMouseLeave={() => this.toggleSidebar()}
           id="appSidebar"
           className="appSidebar inactiveSidebar"
         >
@@ -364,6 +374,39 @@ export default class AppSidebar extends React.Component {
                   />
                 </a>
               </div>
+            </div>
+            <div
+              id="sidebarBlurb"
+              hidden={true}
+              style={{
+                position: "relative",
+                top: "150px",
+                paddingBottom: "10px",
+                justifyContent: "center",
+                color: "darkblue",
+                paddingTop: "10px",
+                paddingRight: "35px",
+                paddingLeft: "35px",
+              }}
+            >
+              "Not all that wander are lost."
+            </div>
+            <div
+              id="sidebarBlurb2"
+              hidden={true}
+              style={{
+                position: "relative",
+                top: "250px",
+                paddingBottom: "10px",
+                justifyContent: "center",
+                color: "darkblue",
+                paddingTop: "10px",
+                paddingRight: "35px",
+                paddingLeft: "35px",
+              }}
+            >
+              Website, &amp; Design by: <br />
+              <a href="http://MicroHawaii.com">http://MicroHawaii.com</a>
             </div>
           </div>
         </div>
