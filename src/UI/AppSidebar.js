@@ -34,8 +34,10 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderOpenIcon").hidden = true;
 
       let sideBarVar = document.getElementById("appSidebar");
-      document.getElementById("sidebarBlurb").hidden = false;
-      document.getElementById("sidebarBlurb2").hidden = false;
+      setTimeout(() => {
+        document.getElementById("sidebarBlurb").hidden = false;
+        document.getElementById("sidebarBlurb2").hidden = false;
+      }, 800);
 
       if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
         sideBarVar.className = "appSidebar active";
@@ -64,6 +66,10 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderOpenIcon").hidden = false;
       document.getElementById("sidebarBlurb").hidden = true;
       document.getElementById("sidebarBlurb2").hidden = true;
+      setTimeout(() => {
+        document.getElementById("sidebarBlurb").hidden = true;
+        document.getElementById("sidebarBlurb2").hidden = true;
+      }, 800);
     }
     this.setState({ sideBarVar: 2 });
   }
@@ -85,6 +91,10 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderOpenIcon").hidden = false;
       document.getElementById("sidebarBlurb").hidden = true;
       document.getElementById("sidebarBlurb2").hidden = true;
+      setTimeout(() => {
+        document.getElementById("sidebarBlurb").hidden = true;
+        document.getElementById("sidebarBlurb2").hidden = true;
+      }, 800);
       this.setState({ sideBarVar: 1 });
     }
     if (this.state.sideBarVar === 1) {
@@ -99,8 +109,10 @@ export default class AppSidebar extends React.Component {
       document.getElementById("SliderCloseIcon").hidden = false;
       document.getElementById("SliderOpenIcon").style.zIndex = 0;
       document.getElementById("SliderOpenIcon").hidden = true;
-      document.getElementById("sidebarBlurb").hidden = false;
-      document.getElementById("sidebarBlurb2").hidden = false;
+      setTimeout(() => {
+        document.getElementById("sidebarBlurb").hidden = false;
+        document.getElementById("sidebarBlurb2").hidden = false;
+      }, 800);
 
       let sideBarVar = document.getElementById("appSidebar");
       if (sideBarVar.className.indexOf("appSidebar inactiveSidebar")) {
@@ -213,6 +225,21 @@ export default class AppSidebar extends React.Component {
             MicroWebKit
           </b>
         </div>
+        {
+          //Sidebar Button Overlay
+        }
+        <div
+          onClick={this.toggleSidebar}
+          className="SliderButtonLay"
+          style={{
+            height: "75px",
+            width: "50px",
+            zIndex: 223,
+            position: "absolute",
+            color: "transparent",
+            backgroundColor: "transparent",
+          }}
+        ></div>
 
         {
           //Sidebar Background Section
@@ -402,7 +429,7 @@ export default class AppSidebar extends React.Component {
                 color: "darkblue",
                 paddingTop: "10px",
                 paddingRight: "35px",
-                paddingLeft: "35px",
+                paddingLeft: "25px",
               }}
             >
               Website, &amp; Design by: <br />
